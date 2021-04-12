@@ -16,10 +16,11 @@ import { ProjectEntity } from '../project/project.entity';
 })
 export class PdfModule implements NestModule {
   public configure(consumer: MiddlewareConsumer) {
-    consumer
-      .apply(AuthMiddleware)
-      .forRoutes(
-        {path: 'generatePdf', method: RequestMethod.POST}
-      );
+    // consumer
+    //   .apply(AuthMiddleware)
+    //   .forRoutes(
+    //     {path: 'pdf/generate', method: RequestMethod.POST},
+    //     {path: 'pdf/upload', method: RequestMethod.POST}
+    //   );
   }
 }

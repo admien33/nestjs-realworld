@@ -6,14 +6,18 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { Connection } from 'typeorm';
 import { ProfileModule } from './profile/profile.module';
 import { TagModule } from './tag/tag.module';
+import { ProjectModule } from './project/project.module';
+import { PdfModule } from './pdf/pdf.module';
 
 @Module({
   imports: [
     TypeOrmModule.forRoot(),
     ArticleModule,
+    ProjectModule,
     UserModule,
     ProfileModule,
-    TagModule
+    TagModule,
+    PdfModule
   ],
   controllers: [
     AppController

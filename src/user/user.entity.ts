@@ -2,6 +2,7 @@ import {Entity, PrimaryGeneratedColumn, Column, BeforeInsert, JoinTable, ManyToM
 import { IsEmail } from 'class-validator';
 import * as argon2 from 'argon2';
 import { ArticleEntity } from '../article/article.entity';
+import { ProjectEntity } from '../project/project.entity';
 
 @Entity('user')
 export class UserEntity {
@@ -36,4 +37,7 @@ export class UserEntity {
 
   @OneToMany(type => ArticleEntity, article => article.author)
   articles: ArticleEntity[];
+
+  @OneToMany(type => ProjectEntity, project => project.owner)
+  projects: ProjectEntity[];
 }
